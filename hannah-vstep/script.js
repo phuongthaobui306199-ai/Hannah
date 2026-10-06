@@ -3,7 +3,7 @@
 // ==========================================
 
 // Backend API URL
-const API_BASE_URL = 'https://landing-pages-backend-em1emql5w.vercel.app'; // Production
+const API_BASE_URL = 'https://landing-pages-backend-phuongthaobui306199-9886s-projects.vercel.app'; // Production
 // const API_BASE_URL = 'http://localhost:3000'; // Local testing
 
 const form = document.querySelector('#lead-form');
