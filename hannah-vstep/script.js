@@ -3,7 +3,7 @@
 // ==========================================
 
 // Backend API URL - THAY ĐỔI THEO URL PRODUCTION
-const API_BASE_URL = 'https://landing-pages-backend.vercel.app';
+const API_BASE_URL = 'https://landing-pages-backend-fawn.vercel.app';
 // Local testing: 'http://localhost:3000'
 
 const form = document.querySelector('#lead-form');
