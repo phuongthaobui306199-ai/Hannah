@@ -1,0 +1,456 @@
+<title>Hannah English Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">
+  <style>
+/* Hannah English Center — Modern Editorial Education.
+   Một giao diện sáng duy nhất theo brand guideline: đỏ – trắng be – đen.
+   Layout: các section xếp dọc, xen kẽ nền be / trắng / mực; serif cho tiêu đề, sans cho nội dung. */
+:root {
+  --ink: #1a1614;
+  --ink-soft: #2a2421;
+  --muted: #6b605a;
+  --paper: #f5ede3;
+  --white: #fffcf8;
+  --red: #a3252b;
+  --red-dark: #7d1b20;
+  --red-tint: #f6e1dd;
+  --line: #e0d4c7;
+  --line-dark: #443b37;
+  --on-dark: #ece4dc;
+  --on-dark-muted: #bdb2a9;
+  --display: "Playfair Display", "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --radius: 16px;
+  --gutter: max(5vw, 20px);
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--white); font: 16px/1.7 var(--body); }
+a { color: inherit; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { font-family: var(--display); font-weight: 500; line-height: 1.12; letter-spacing: -.015em; text-wrap: balance; }
+h1 { font-size: clamp(2.5rem, 5.6vw, 4.6rem); margin-bottom: 24px; }
+h1 em, h2 em { color: var(--red); font-style: italic; }
+h2 { font-size: clamp(2rem, 4vw, 3.3rem); max-width: 820px; margin-bottom: 18px; }
+h3 { font-size: 1.12rem; line-height: 1.4; font-weight: 700; margin-bottom: 10px; text-wrap: balance; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+.section { padding: 96px var(--gutter); }
+.eyebrow { color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .76rem; margin-bottom: 14px; }
+.eyebrow-light { color: #e9a8a3; }
+.section-heading { margin-bottom: 48px; max-width: 820px; }
+.section-lead { color: var(--muted); font-size: 1.08rem; max-width: 640px; margin-bottom: 0; }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px var(--gutter); background: rgba(255, 252, 248, .95); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+.brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+.brand-mark { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: var(--red); color: var(--white); font: 600 1.3rem/1 var(--display); }
+.brand-name { font: 600 1.08rem/1 var(--display); }
+.brand-name small { display: block; margin-top: 4px; font: 600 .62rem/1 var(--body); letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.nav { display: flex; align-items: center; gap: 26px; font-size: .92rem; font-weight: 600; }
+.nav a:not(.button) { text-decoration: none; color: var(--ink-soft); }
+.nav a:not(.button):hover { color: var(--red); }
+
+/* Buttons */
+.button { display: inline-flex; justify-content: center; align-items: center; padding: 15px 24px; border: 1px solid var(--red); border-radius: 999px; background: var(--red); color: var(--white); font: 600 1rem/1.2 var(--body); text-decoration: none; cursor: pointer; transition: background .2s; }
+.button:hover { background: var(--red-dark); border-color: var(--red-dark); }
+.button-small { padding: 10px 18px; font-size: .9rem; }
+.text-link { font-weight: 600; text-underline-offset: 5px; text-decoration-color: var(--red); }
+
+/* 1. Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); align-items: center; gap: 6vw; background: var(--paper); padding-top: 84px; padding-bottom: 96px; }
+.hero-copy { min-width: 0; }
+.hero-lead { color: var(--muted); font-size: clamp(1.04rem, 1.6vw, 1.2rem); max-width: 600px; }
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 30px; }
+
+.pick-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: 0 18px 50px rgba(70, 40, 25, .08); min-width: 0; }
+.pick-title { font: italic 500 1.35rem/1.2 var(--display); margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+.pick-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; counter-reset: q; }
+.pick-list li { display: grid; gap: 8px; counter-increment: q; }
+.pick-q { font-size: .86rem; font-weight: 600; color: var(--muted); }
+.pick-q::before { content: counter(q) ". "; color: var(--red); }
+.pick-a { font-weight: 600; border-bottom: 1px solid var(--ink); padding-bottom: 4px; width: fit-content; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: .84rem; font-weight: 600; padding: 6px 13px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); }
+.chip-on { background: var(--red-tint); border-color: var(--red); color: var(--red-dark); }
+.pick-result { margin: 22px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-weight: 600; color: var(--red-dark); }
+
+/* 2. Problem */
+.problem-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.problem-grid article { padding-top: 22px; border-top: 2px solid var(--ink); }
+.problem-grid h3 { font: italic 500 1.4rem/1.35 var(--display); margin-bottom: 14px; }
+.problem-grid p { color: var(--muted); margin: 0; }
+
+/* 3. Solution */
+.solution { background: var(--ink); color: var(--on-dark); }
+.solution-card { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 7vw; }
+.solution h2 { color: var(--white); }
+.solution-lead { color: var(--on-dark-muted); max-width: 440px; }
+.steps { list-style: none; margin: 0; padding: 0; }
+.steps li { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 18px; padding: 24px 0; border-top: 1px solid var(--line-dark); }
+.steps li:last-child { border-bottom: 1px solid var(--line-dark); }
+.steps b { color: #e9a8a3; font-size: .82rem; text-transform: uppercase; letter-spacing: .1em; padding-top: 3px; }
+.steps span { color: var(--on-dark-muted); }
+.steps strong { display: block; color: var(--white); font-size: 1.1rem; margin-bottom: 4px; }
+
+/* 4. Outcomes */
+.split-heading { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 6vw; align-items: end; max-width: none; }
+.split-heading > p { color: var(--muted); margin: 0; }
+.outcome-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.outcome-grid article { padding: 30px 26px; border-right: 1px solid var(--line); }
+.outcome-grid article:last-child { border-right: 0; }
+.outcome-grid h3::before { content: ""; display: block; width: 26px; height: 2px; background: var(--red); margin-bottom: 22px; }
+.outcome-grid p { color: var(--muted); margin: 0; font-size: .96rem; }
+.quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 48px; }
+.quotes figure { margin: 0; padding: 28px 30px; background: var(--paper); border-radius: var(--radius); }
+.quotes blockquote { margin: 0 0 14px; font: italic 500 1.3rem/1.45 var(--display); }
+.quotes figcaption { font-size: .85rem; font-weight: 600; color: var(--muted); }
+
+/* 5. Curriculum */
+.curriculum { background: var(--paper); }
+.band-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 36px; }
+.band { display: grid; gap: 2px; padding: 16px 20px; border-radius: 12px; background: var(--red); color: var(--white); }
+.band-mid { background: var(--red-dark); }
+.band-muted { background: var(--white); color: var(--muted); border: 1px solid var(--line); }
+.band-level { font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+.band-score { font: 600 1.6rem/1.2 var(--display); font-variant-numeric: lining-nums tabular-nums; }
+.skill-table { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.skill-row { display: grid; grid-template-columns: 160px 230px minmax(0, 1fr); gap: 24px; padding: 20px 26px; border-top: 1px solid var(--line); }
+.skill-row > span { min-width: 0; }
+.skill-head { border-top: 0; background: var(--ink); color: var(--on-dark); font-size: .76rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding-top: 14px; padding-bottom: 14px; }
+.skill-row strong { display: block; font: 600 1.25rem/1.2 var(--display); }
+.skill-row em { font-style: normal; font-size: .8rem; color: var(--muted); }
+.skill-meta { font-weight: 600; color: var(--red-dark); font-variant-numeric: tabular-nums; }
+.formats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 40px; }
+.formats > div { padding-top: 18px; border-top: 2px solid var(--red); }
+.formats p { color: var(--muted); margin: 0; }
+
+/* 6. FAQ */
+.faq { display: grid; grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr); gap: 6vw; }
+.faq .section-heading { margin-bottom: 0; }
+.faq-list { border-top: 1px solid var(--line); }
+details { border-bottom: 1px solid var(--line); }
+summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 18px; padding: 22px 0; font-size: 1.06rem; font-weight: 600; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; margin-left: auto; color: var(--red); font-size: 1.5rem; font-weight: 400; line-height: 1; }
+details[open] summary::after { content: "−"; }
+details > p { color: var(--muted); margin: 0; padding: 0 40px 22px 0; }
+
+/* 7. Register */
+.register { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 6vw; background: var(--ink); color: var(--on-dark); }
+.register h2 { color: var(--white); }
+.register-copy > p:not(.eyebrow) { color: var(--on-dark-muted); }
+.alt-contact a { color: var(--white); text-underline-offset: 4px; }
+.alt-contact strong { color: var(--white); }
+.privacy-note { margin-top: 30px; padding-left: 14px; border-left: 2px solid var(--red); font-size: .9rem; }
+form { display: grid; gap: 18px; padding: clamp(24px, 4vw, 44px); background: var(--white); color: var(--ink); border-radius: var(--radius); min-width: 0; }
+label, legend { font-size: .88rem; font-weight: 600; }
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+legend { padding: 0; margin-bottom: 8px; }
+input, select { width: 100%; margin-top: 7px; padding: 13px 14px; border: 1px solid var(--line); border-radius: 10px; background: var(--white); color: var(--ink); font: inherit; font-weight: 400; }
+input:focus, select:focus { outline: 3px solid rgba(163, 37, 43, .16); border-color: var(--red); }
+.form-two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.radio-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.radio { position: relative; }
+.radio input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.radio span { display: inline-block; padding: 9px 20px; border: 1px solid var(--line); border-radius: 999px; cursor: pointer; font-weight: 600; }
+.radio input:checked + span { background: var(--red-tint); border-color: var(--red); color: var(--red-dark); }
+.radio input:focus-visible + span { outline: 3px solid var(--red); outline-offset: 2px; }
+.consent { display: flex; align-items: flex-start; gap: 10px; font-weight: 400; color: var(--muted); }
+.consent input { width: auto; margin-top: 5px; accent-color: var(--red); }
+.form-status { min-height: 24px; margin: 0; font-size: .92rem; color: var(--red-dark); }
+
+footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px 32px; padding: 34px var(--gutter); border-top: 1px solid var(--line); font-size: .84rem; color: var(--muted); background: var(--white); }
+footer p { margin: 0; }
+
+@media (max-width: 960px) {
+  .section { padding-top: 72px; padding-bottom: 72px; }
+  .hero, .solution-card, .split-heading, .faq, .register { grid-template-columns: minmax(0, 1fr); }
+  .hero { gap: 40px; padding-top: 56px; }
+  .pick-card { max-width: 480px; }
+  .problem-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .outcome-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .outcome-grid article:nth-child(2) { border-right: 0; }
+  .outcome-grid article:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .skill-row { grid-template-columns: 130px minmax(0, 1fr); }
+  .skill-row > span:last-child { grid-column: 2; }
+  .skill-head > span:last-child { display: none; }
+  .faq .section-heading { margin-bottom: 8px; }
+}
+
+@media (max-width: 640px) {
+  .nav a:not(.button) { display: none; }
+  .button-small { padding: 9px 14px; font-size: .84rem; }
+  .brand-name { font-size: .98rem; }
+  .section { padding-left: 18px; padding-right: 18px; }
+  .site-header, footer { padding-left: 18px; padding-right: 18px; }
+  h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  h2 { font-size: clamp(1.8rem, 8vw, 2.3rem); }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .text-link { text-align: center; }
+  .pick-card { padding: 22px; }
+  .outcome-grid, .quotes, .formats, .band-row, .form-two { grid-template-columns: minmax(0, 1fr); }
+  .outcome-grid article { border-right: 0; border-bottom: 1px solid var(--line); }
+  .outcome-grid article:last-child { border-bottom: 0; }
+  .band { grid-template-columns: 1fr auto; align-items: center; }
+  .skill-row { grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 18px 20px; }
+  .skill-row > span:last-child { grid-column: auto; }
+  .skill-head { display: none; }
+  .steps li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  details > p { padding-right: 0; }
+  form { padding: 22px 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
+
+</style>
+<header class="site-header">
+    <a class="brand" href="#top" aria-label="Hannah English Center - về đầu trang">
+      <span class="brand-mark" aria-hidden="true">H</span>
+      <span class="brand-name">Hannah English<small>Center</small></span>
+    </a>
+    <nav class="nav" aria-label="Điều hướng chính">
+      <a href="#chuong-trinh">Chương trình</a>
+      <a href="#faq">Hỏi đáp</a>
+      <a class="button button-small" href="#dang-ky">Tư vấn chọn lớp</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- 1. HERO — M01 -->
+    <section class="hero section">
+      <div class="hero-copy">
+        <p class="eyebrow">Luyện thi VSTEP B1 · B2 — Cần Thơ &amp; Online</p>
+        <h1>Chọn đúng lớp VSTEP cho <em>mục tiêu và lịch của bạn</em></h1>
+        <p class="hero-lead">Hannah tư vấn bạn chọn lớp dựa trên ba điều: bạn cần B1 hay B2, cần chứng chỉ khi nào và rảnh những khung giờ nào. Có lớp tại Cần Thơ, lớp online và các ca buổi tối.</p>
+        <div class="hero-actions">
+          <a class="button" href="#dang-ky">Đăng ký tư vấn chọn lớp</a>
+          <a class="text-link" href="#chuong-trinh">Xem chương trình học</a>
+        </div>
+      </div>
+
+      <aside class="pick-card" aria-label="Ba thông tin Hannah cần để tư vấn lớp">
+        <p class="pick-title">Phiếu chọn lớp</p>
+        <ol class="pick-list">
+          <li><span class="pick-q">Mục tiêu</span><span class="chips"><b class="chip chip-on">B1</b><b class="chip">B2</b></span></li>
+          <li><span class="pick-q">Cần chứng chỉ khi nào?</span><span class="pick-a">Hạn hồ sơ / tốt nghiệp</span></li>
+          <li><span class="pick-q">Học vào lúc nào?</span><span class="chips"><b class="chip">Cần Thơ</b><b class="chip chip-on">Online</b><b class="chip chip-on">Ca tối</b></span></li>
+        </ol>
+        <p class="pick-result"><span aria-hidden="true">→</span> Hannah gợi ý lớp phù hợp và gửi bạn video học thử</p>
+      </aside>
+    </section>
+
+    <!-- 2. VẤN ĐỀ -->
+    <section class="section problem" id="van-de">
+      <div class="section-heading">
+        <p class="eyebrow">Có thể bạn cũng đang lo</p>
+        <h2>Đề khó chưa phải nỗi lo duy nhất</h2>
+        <p class="section-lead">Nhiều người ngại nhất là chọn sai lớp hoặc sai lịch, học một thời gian rồi vẫn chưa kịp mục tiêu chứng chỉ.</p>
+      </div>
+      <div class="problem-grid">
+        <article data-evidence="V20,V21,V22" data-scope="Market proxy">
+          <h3>“Mất gốc lâu rồi, không biết bắt đầu từ đâu”</h3>
+          <p>Ngữ pháp quên gần hết, nghe chưa bắt được ý, nhìn đề Writing là ngại. Bạn không chắc mình nên học lại từ đâu.</p>
+        </article>
+        <article data-evidence="V06,H03,V15,V24" data-scope="Hannah direct + Market proxy">
+          <h3>“Sợ không kịp hạn nộp chứng chỉ”</h3>
+          <p>Bạn cần B1 hoặc B2 cho tốt nghiệp, hồ sơ học tập hay công việc, nhưng ban ngày đã kín lịch học hoặc lịch làm.</p>
+        </article>
+        <article data-evidence="V04,V17" data-scope="Hannah direct + Market proxy">
+          <h3>“Sợ đăng ký rồi không ai theo sát”</h3>
+          <p>Bạn muốn biết trước giáo viên có giảng dễ hiểu và lắng nghe mình không, thay vì phải tự xoay xở một mình.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. GIẢI QUYẾT GÌ — quy trình 3 bước, có thứ tự thật -->
+    <section class="section solution">
+      <div class="solution-card">
+        <div>
+          <p class="eyebrow eyebrow-light">Hannah giúp bạn thế nào</p>
+          <h2>Bắt đầu từ bước phù hợp với mình</h2>
+          <p class="solution-lead">Bạn không cần giỏi sẵn mới được bắt đầu. Bạn chỉ cần biết mục tiêu của mình và chọn một lớp vừa sức.</p>
+        </div>
+        <ol class="steps">
+          <li><b>Bước 1</b><span><strong>Gửi Hannah ba thông tin</strong>Mục tiêu B1 hay B2, thời điểm cần chứng chỉ và những khung giờ bạn có thể học.</span></li>
+          <li><b>Bước 2</b><span><strong>Chọn hình thức và ca học</strong>Học trực tiếp tại Cần Thơ hoặc online, có các ca buổi tối cho người bận ban ngày.</span></li>
+          <li><b>Bước 3</b><span><strong>Xem video học thử</strong>Cảm nhận cách giảng trước, rồi trao đổi với Hannah về kỹ năng bạn đang yếu nhất.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 4. KẾT QUẢ -->
+    <section class="section outcomes" id="ket-qua">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">Khi học cùng Hannah</p><h2>Bạn nhận được gì?</h2></div>
+        <p>Kết quả thi còn phụ thuộc vào điểm xuất phát và thời gian bạn dành cho việc học. Đây là những điều lớp học hướng tới cho mọi học viên.</p>
+      </div>
+      <div class="outcome-grid">
+        <article><h3>Lộ trình rõ ràng</h3><p>Biết mình đang học cho B1 hay B2, nên ưu tiên kỹ năng nào trước và vì sao.</p></article>
+        <article><h3>Hiểu cấu trúc đề</h3><p>Nắm từng phần của bài thi VSTEP, dạng câu hỏi thường gặp và cách phân bổ thời gian.</p></article>
+        <article><h3>Lịch học vừa sức</h3><p>Học tại Cần Thơ hoặc online, chọn ca tối nếu ban ngày bạn đi học hoặc đi làm.</p></article>
+        <article><h3>Lớp học dễ tiếp thu</h3><p>Giáo viên trực tiếp đứng lớp, giảng dễ hiểu và tương tác gần gũi với học viên.</p></article>
+      </div>
+
+      <div class="quotes" aria-label="Phản hồi học viên Hannah">
+        <figure data-evidence="V04" data-scope="Hannah direct">
+          <blockquote>“Bài giảng dễ hiểu; cô lắng nghe và nhẹ nhàng.”</blockquote>
+          <figcaption>Học viên Hannah English</figcaption>
+        </figure>
+        <figure data-evidence="V01" data-scope="Hannah direct">
+          <blockquote>“Học rất vui và thoải mái; ngoài kiến thức còn nhận được nhiều năng lượng tích cực.”</blockquote>
+          <figcaption>Học viên Hannah English</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 5. NỘI DUNG CHƯƠNG TRÌNH -->
+    <section class="section curriculum" id="chuong-trinh">
+      <div class="section-heading">
+        <p class="eyebrow">Nội dung chương trình</p>
+        <h2>Luyện đủ 4 kỹ năng của bài thi VSTEP</h2>
+        <p class="section-lead">VSTEP bậc 3–5 dùng chung một đề cho cả B1 và B2. Điểm trung bình 4 kỹ năng quyết định bậc bạn đạt được.</p>
+      </div>
+
+      <div class="band-row" aria-label="Khung điểm VSTEP">
+        <div class="band"><span class="band-level">B1 · Bậc 3</span><span class="band-score">4,0 – 5,5</span></div>
+        <div class="band band-mid"><span class="band-level">B2 · Bậc 4</span><span class="band-score">6,0 – 8,0</span></div>
+        <div class="band band-muted"><span class="band-level">C1 · Bậc 5</span><span class="band-score">8,5 – 10</span></div>
+      </div>
+
+      <div class="skill-table" role="table" aria-label="Cấu trúc bài thi VSTEP">
+        <div class="skill-row skill-head" role="row">
+          <span role="columnheader">Kỹ năng</span><span role="columnheader">Đề thi</span><span role="columnheader">Lớp học tập trung vào</span>
+        </div>
+        <div class="skill-row" role="row">
+          <span role="cell"><strong>Nghe</strong><em>Listening</em></span>
+          <span role="cell" class="skill-meta">3 phần · 35 câu · khoảng 40 phút</span>
+          <span role="cell">Làm quen tốc độ và giọng đọc, bắt từ khóa trước khi nghe, luyện từ đoạn ngắn đến bài dài.</span>
+        </div>
+        <div class="skill-row" role="row">
+          <span role="cell"><strong>Đọc</strong><em>Reading</em></span>
+          <span role="cell" class="skill-meta">4 bài đọc · 40 câu · 60 phút</span>
+          <span role="cell">Đọc lướt tìm ý, đọc kỹ tìm chi tiết, đoán nghĩa từ theo ngữ cảnh và quản lý thời gian.</span>
+        </div>
+        <div class="skill-row" role="row">
+          <span role="cell"><strong>Viết</strong><em>Writing</em></span>
+          <span role="cell" class="skill-meta">2 bài: thư và bài luận · 60 phút</span>
+          <span role="cell">Ôn lại ngữ pháp nền tảng, lập dàn ý, viết câu rõ ý và dùng từ nối đúng chỗ.</span>
+        </div>
+        <div class="skill-row" role="row">
+          <span role="cell"><strong>Nói</strong><em>Speaking</em></span>
+          <span role="cell" class="skill-meta">3 phần · khoảng 12 phút</span>
+          <span role="cell">Trả lời câu hỏi xã hội, thảo luận giải pháp và phát triển một chủ đề có cấu trúc.</span>
+        </div>
+      </div>
+
+      <div class="formats">
+        <div><h3>Học tại Cần Thơ</h3><p>Lớp trực tiếp, giáo viên đứng lớp và tương tác với từng học viên.</p></div>
+        <div><h3>Học online</h3><p>Phù hợp khi bạn ở xa hoặc lịch thay đổi thường xuyên.</p></div>
+        <div><h3>Ca buổi tối</h3><p>Dành cho sinh viên và người đi làm bận rộn ban ngày.</p></div>
+      </div>
+    </section>
+
+    <!-- 6. FAQ -->
+    <section class="section faq" id="faq">
+      <div class="section-heading"><p class="eyebrow">Câu hỏi thường gặp</p><h2>Trước khi bạn đăng ký</h2></div>
+      <div class="faq-list">
+        <details><summary>Mình mất gốc tiếng Anh, có học được không?</summary><p>Được. Mất gốc không phải điều đáng ngại. Quan trọng là bạn được tư vấn bước học vừa sức và biết mình cần ưu tiên kỹ năng nào. Hãy cho Hannah biết bạn đang ngại phần nào nhất để được gợi ý lớp phù hợp.</p></details>
+        <details><summary>Nên học B1 hay B2?</summary><p>Tùy yêu cầu của trường hoặc nơi bạn nộp hồ sơ. Bạn hãy kiểm tra quy định chuẩn đầu ra trước, rồi gửi Hannah mục tiêu và thời hạn để được tư vấn cụ thể.</p></details>
+        <details><summary>Học online có khác học tại Cần Thơ không?</summary><p>Cả hai hình thức đều do giáo viên trực tiếp đứng lớp. Bạn chọn theo nơi ở và lịch của mình. Nếu chưa chắc, hãy nói với Hannah hoàn cảnh của bạn để được gợi ý.</p></details>
+        <details><summary>Có ca học buổi tối không?</summary><p>Có. Hannah có các ca buổi tối. Khung giờ và lịch khai giảng cụ thể sẽ được xác nhận khi tư vấn, vì lịch thay đổi theo từng đợt.</p></details>
+        <details><summary>Học xong có chắc chắn đậu không?</summary><p>Hannah không cam kết đậu, vì kết quả còn phụ thuộc điểm xuất phát, thời gian ôn tập và sự đều đặn của mỗi người. Điều Hannah làm được là giúp bạn chọn lớp phù hợp, học đúng trọng tâm và được theo sát trong lớp.</p></details>
+        <details><summary>Học phí và lịch khai giảng thế nào?</summary><p>Học phí và lịch khai giảng được thông báo trực tiếp khi tư vấn để đảm bảo thông tin luôn đúng với đợt học gần nhất.</p></details>
+        <details><summary>Mình có được học thử trước không?</summary><p>Có. Bạn inbox fanpage hoặc để lại thông tin bên dưới để nhận video học thử và cảm nhận cách giảng trước khi quyết định.</p></details>
+      </div>
+    </section>
+
+    <!-- 7. CTA ĐĂNG KÝ -->
+    <section class="section register" id="dang-ky">
+      <div class="register-copy">
+        <p class="eyebrow eyebrow-light">Đăng ký tư vấn chọn lớp</p>
+        <h2>Gửi Hannah mục tiêu, thời hạn và lịch rảnh của bạn</h2>
+        <p>Hannah sẽ liên hệ để gợi ý lớp phù hợp và gửi bạn video học thử.</p>
+        <p class="alt-contact">Bạn cũng có thể inbox fanpage <a href="https://www.facebook.com/hannah.english.official" target="_blank" rel="noopener">Hannah English</a> với từ khóa <strong>CHỌN LỚP</strong>.</p>
+        <p class="privacy-note">Thông tin của bạn chỉ dùng để Hannah liên hệ tư vấn chọn lớp.</p>
+      </div>
+      <form id="lead-form" novalidate>
+        <label for="f-name">Họ và tên<input id="f-name" name="name" autocomplete="name" required placeholder="Họ và tên của bạn"></label>
+        <label for="f-phone">Số điện thoại / Zalo<input id="f-phone" name="phone" autocomplete="tel" inputmode="tel" required pattern="(\+84|0)[\s.]?\d([\s.]?\d){8}" title="Số điện thoại Việt Nam gồm 10 số, ví dụ 0912 345 678" placeholder="09xx xxx xxx"></label>
+        <fieldset>
+          <legend>Mục tiêu của bạn</legend>
+          <div class="radio-row">
+            <label class="radio"><input type="radio" name="goal" value="B1" required><span>B1</span></label>
+            <label class="radio"><input type="radio" name="goal" value="B2"><span>B2</span></label>
+            <label class="radio"><input type="radio" name="goal" value="Chưa rõ"><span>Chưa rõ</span></label>
+          </div>
+        </fieldset>
+        <div class="form-two">
+          <label for="f-deadline">Cần chứng chỉ khi nào?
+            <select id="f-deadline" name="deadline" required>
+              <option value="">Chọn thời hạn</option>
+              <option>Trong 3 tháng tới</option>
+              <option>3 – 6 tháng tới</option>
+              <option>Hơn 6 tháng nữa</option>
+              <option>Chưa xác định</option>
+            </select>
+          </label>
+          <label for="f-format">Hình thức muốn học
+            <select id="f-format" name="format" required>
+              <option value="">Chọn hình thức</option>
+              <option>Tại Cần Thơ</option>
+              <option>Online</option>
+              <option>Chưa chắc, cần tư vấn</option>
+            </select>
+          </label>
+        </div>
+        <label for="f-time">Khung giờ bạn có thể học<input id="f-time" name="time" placeholder="Ví dụ: tối thứ 3, 5, 7 sau 19h"></label>
+        <label class="consent" for="f-consent"><input id="f-consent" type="checkbox" name="consent" required><span>Tôi đồng ý để Hannah English Center liên hệ tư vấn theo thông tin trên.</span></label>
+        <button class="button" type="submit">Gửi đăng ký tư vấn</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">H</span><span class="brand-name">Hannah English<small>Center</small></span></a>
+    <p>Luyện thi VSTEP B1, B2 tại Cần Thơ &amp; Online.</p>
+    <p>© 2026 Hannah English Center</p>
+  </footer>
+
+  <script>
+const form = document.querySelector('#lead-form');
+const statusNode = document.querySelector('#form-status');
+const STORAGE_KEY = 'hannah-vstep-leads';
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    statusNode.textContent = 'Bạn vui lòng điền đủ thông tin, số điện thoại hợp lệ và xác nhận đồng ý liên hệ nhé.';
+    return;
+  }
+
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  // Bản demo: lưu lead trên trình duyệt. Thay bằng endpoint CRM/webhook trước khi xuất bản.
+  try {
+    const leads = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    leads.push({ ...data, createdAt: new Date().toISOString() });
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(leads));
+  } catch (error) {
+    console.warn('Không lưu được lead demo:', error);
+  }
+
+  form.reset();
+  statusNode.textContent = 'Cảm ơn bạn! Bản demo đã ghi nhận đăng ký trên trình duyệt này.';
+});
+
+</script>
